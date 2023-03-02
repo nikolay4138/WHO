@@ -1,16 +1,17 @@
 .video-container {
   position: relative;
-  width: 80vw;
+  display: flex;
   height: 45vw;
   max-width: 800px;
   max-height: 450px;
   margin: 0 auto;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 .controls {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  width: 75%;
   height: 48px;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -20,19 +21,27 @@
 }
 
 .play-btn {
+  fill: #fff;
+  background-color: rgba(255, 255, 255, 0);
   background-image: url("./svg/play-pause.svg");
   background-repeat: no-repeat;
   background-size: contain;
   border: none;
   cursor: pointer;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   position: absolute;
   top: 50%;
+  left: 15px;
   transform: translate(-50%, -50%);
 }
 
+.play-btn svg {
+  fill: white !important;
+}
+
 .fullscreen-btn {
+  background-color: rgba(255, 255, 255, 0);
   background-image: url("./svg/fulscreen.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -42,11 +51,15 @@
   height: 36px;
   position: absolute;
   top: 50%;
-  right: 72px;
+  right: 24px;
   transform: translateY(-50%);
+}
+.fullscreen-btn svg {
+  fill: white !important;
 }
 
 .mute-btn {
+  background-color: rgba(255, 255, 255, 0);
   background-image: url("./svg/mute-btn.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -56,7 +69,7 @@
   height: 36px;
   position: absolute;
   top: 50%;
-  right: 24px;
+  right: 72px;
   transform: translateY(-50%);
 }
 
@@ -107,13 +120,18 @@
   }
 
   .seek-bar {
-    height: 2px;
-    border-radius: 1px;
+    -webkit-appearance: none; /* hide default thumb */
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px; /* set the height of the track */
+    background-color: #ccc; /* set the color of the track */
   }
 
   .seek-bar::-webkit-slider-thumb {
-    width: 8px;
-    height: 8px;
-    border-width: 1px;
+    -webkit-appearance: none; /* hide default thumb */
+  }
+
+  .seek-bar::-moz-range-thumb {
+    -moz-appearance: none; /* hide default thumb */
   }
 }
