@@ -1,3 +1,7 @@
+.title {
+  text-align: center;
+}
+
 .video-container {
   position: relative;
   display: flex;
@@ -31,13 +35,10 @@
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 50%;
-  left: 15px;
+  top: 5px;
+  left: 45px;
   transform: translate(-50%, -50%);
-}
-
-.play-btn svg {
-  fill: white !important;
+  scale: 1.2;
 }
 
 .fullscreen-btn {
@@ -50,12 +51,9 @@
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 50%;
-  right: 24px;
+  top: 0;
+  right: 15px;
   transform: translateY(-50%);
-}
-.fullscreen-btn svg {
-  fill: white !important;
 }
 
 .mute-btn {
@@ -68,8 +66,8 @@
   width: 36px;
   height: 36px;
   position: absolute;
-  top: 50%;
-  right: 72px;
+  top: 0;
+  right: 70px;
   transform: translateY(-50%);
 }
 
