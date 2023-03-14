@@ -27,7 +27,7 @@
 .play-btn {
   fill: #fff;
   background-color: rgba(255, 255, 255, 0);
-  background-image: url("./svg/play-pause.svg");
+  background-image: url("./svg/play.svg");
   background-repeat: no-repeat;
   background-size: contain;
   border: none;

@@ -14,8 +14,20 @@ function onYouTubeIframeAPIReady() {
     },
     events: {
       onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange,
     },
   });
+}
+
+const playBtn = document.querySelector(".play-btn");
+
+function onPlayerStateChange(event) {
+  playBtn.style.backgroundImage = 'url("./svg/play.svg")';
+  if (event.data === YT.PlayerState.PLAYING) {
+    playBtn.style.backgroundImage = 'url("./svg/pause.svg")';
+  } else {
+    playBtn.style.backgroundImage = 'url("./svg/play.svg")';
+  }
 }
 
 // Define a function to initialize the player controls
@@ -52,8 +64,10 @@ function togglePlay() {
 function toggleMute() {
   if (player.isMuted()) {
     player.unMute();
+    muteButton.style.backgroundImage = 'url("./svg/mute-btn.svg")'; // Change to mute icon
   } else {
     player.mute();
+    muteButton.style.backgroundImage = 'url("./svg/unmute-btn.svg")'; // Change to unmute icon
   }
 }
 
