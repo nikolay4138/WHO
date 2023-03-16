@@ -5,10 +5,19 @@ let muteButton;
 let seekBar;
 let fullScreenButton;
 
+// Get the video ID from the URL
+const urlParams = new URLSearchParams(window.location.search);
+let videoId = urlParams.get("v");
+
+if (!videoId) {
+  // Define an array of video IDs
+  videoId = ["medFVIvmevU", "medFVIvmevU"];
+}
+
 // Define a function to create the YouTube player
-function onYouTubeIframeAPIReady() {
+function onYouTubeIframeAPIReady(videoId) {
   player = new YT.Player("player", {
-    videoId: "medFVIvmevU",
+    videoId: videoId,
     playerVars: {
       controls: 0,
     },
@@ -89,3 +98,10 @@ function toggleFullScreen() {
     document.exitFullscreen();
   }
 }
+
+//TO-DO this can be improove if is inappropriate
+// Choose a random video ID from the array
+const randomVideoId = videoId[Math.floor(Math.random() * videoId.length)];
+
+// Load the YouTube player with the random video ID
+onYouTubeIframeAPIReady(randomVideoId);
